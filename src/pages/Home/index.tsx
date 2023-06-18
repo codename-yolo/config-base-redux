@@ -21,7 +21,8 @@ const stateSelector = createStructuredSelector({
     posts: makeSelectPosts(),
 });
 
-const Home: FC = (props) => {
+const Home: FC = () => {
+    console.log('home')
     useInjectReducer(key, reducer);
     useInjectSaga(key, saga);
     
@@ -29,9 +30,9 @@ const Home: FC = (props) => {
 
     const navigate = useNavigate()
 
-    const { isLoading, completed, posts } = useSelector(stateSelector);
+    // const { isLoading, completed, posts } = useSelector(stateSelector);
 
-    console.log(isLoading, completed, posts);
+    // console.log(isLoading, completed, posts);
 
     useEffect(() => {
         dispatch(requestGetPostsStart())

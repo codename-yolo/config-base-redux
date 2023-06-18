@@ -23,6 +23,7 @@ function* requestGetPosts(input: any) {
 }
 
 export default function* watchForgotPasswordScreenAction() {
+    console.log('saga');
     yield takeLatest(
         actionTypes.REQUEST_GET_POSTS_START,
         requestGetPosts,
